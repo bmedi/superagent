@@ -50,3 +50,8 @@ next-env.d.ts
 
 # supabase
 v2.code-workspace
+supabase/config.toml
+supabase/functions/.vscode/extensions.json
+superagent.code-workspace
+supabase/seed.sql
+supabase/functions/.vscode/settings.json

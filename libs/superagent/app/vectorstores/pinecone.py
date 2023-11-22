@@ -62,7 +62,6 @@ class PineconeVectorStore:
 
         logger.info(f"Index name: {index_name}")
         self.index = pinecone.Index(index_name)
-
         self.embeddings = OpenAIEmbeddings(
             model="text-embedding-ada-002", openai_api_key=config("OPENAI_API_KEY")
         )  # type: ignore
@@ -175,7 +174,7 @@ class PineconeVectorStore:
         query_type: Literal["document", "all"] = "document",
     ) -> list[str]:
         if top_k is None:
-            top_k = 3
+            top_k = 5
 
         logger.info(f"Executing query with document id in namespace {datasource_id}")
         documents_in_namespace = self.query(
